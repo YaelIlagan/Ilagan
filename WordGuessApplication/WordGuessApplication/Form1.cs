@@ -20,7 +20,6 @@ namespace WordGuessApplication
         private void btnguess_Click(object sender, EventArgs e)
         {
             string answer = "computer";
-
             string txtgues = txtguess.Text;
             bool guesscontain = txtgues.Contains("computer");
             string guesses = txtguess.Text;
