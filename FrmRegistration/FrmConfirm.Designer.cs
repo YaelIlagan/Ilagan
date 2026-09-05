@@ -244,6 +244,7 @@
             this.Name = "FrmConfirm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConfirm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmConfirm_FormClosing);
             this.Load += new System.EventHandler(this.FrmConfirm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
