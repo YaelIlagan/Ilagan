@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace FrmRegistration
 {
-    public partial class Form1 : Form
+    public partial class FrmRegistration : Form
     {
-        public Form1()
+        public FrmRegistration()
         {
             InitializeComponent();
-        }
 
-        private void FrmRegistration_Load(object sender, EventArgs e)
-        {
             cbProgram.Items.Add("BS in Computer Science");
             cbProgram.Items.Add("BS in Information Technology");
             cbProgram.Items.Add("BS in Information Systems");
+
         }
+
+        
 
         private void btnNext_Click(object sender, EventArgs e)
         {
