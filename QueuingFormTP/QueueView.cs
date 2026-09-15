@@ -15,15 +15,20 @@ namespace QueuingForm
         public QueueView()
         {
             InitializeComponent();
-
+            timer2.Start();
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (CashierClass.CashierQueue.Count > 0)
+            try
             {
-                lblQueueServe.Text = CashierClass.CashierQueue.Peek().ToString();
+                lblQueueServe.Text = CashierClass.CashierQueue.Peek();
+            }
+            catch (InvalidOperationException)
+            {
+                lblQueueServe.Text = "P - 00000"; 
             }
         }
     }
 }
+;
