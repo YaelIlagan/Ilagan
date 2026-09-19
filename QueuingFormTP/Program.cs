@@ -20,6 +20,9 @@ namespace QueuingForm
             CashierWindowQueueForm cashierWindow = new CashierWindowQueueForm();
             cashierWindow.Show();
 
+            QueueView QueueLineView = new QueueView();
+            QueueLineView.Show();
+
             Application.Run(new QueuingForm());
         }
     }

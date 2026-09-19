@@ -18,7 +18,7 @@ namespace QueuingForm
             CashierQueue = new Queue<string>();
         }
 
-        public string CashierGeneratedNumber(string CashierNumber)
+        public string CashierGenerateNumber(string CashierNumber)
         {
             x++;
             CashierNumber = CashierNumber + x.ToString();

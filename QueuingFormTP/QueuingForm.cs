@@ -22,7 +22,7 @@ namespace QueuingForm
 
         private void btnCashier_Click(object sender, EventArgs e)
         {
-            lblQueue.Text = cashier.CashierGeneratedNumber("P - ");
+            lblQueue.Text = cashier.CashierGenerateNumber("P - ");
             CashierClass.getNumberInQueue = lblQueue.Text;
             CashierClass.CashierQueue.Enqueue(CashierClass.getNumberInQueue);
         }

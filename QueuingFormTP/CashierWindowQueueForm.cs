@@ -17,7 +17,7 @@ namespace QueuingForm
         {
             InitializeComponent();
 
-            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Tick += new EventHandler(timer1_Tick); 
             timer1.Start();
         }
 
@@ -28,7 +28,7 @@ namespace QueuingForm
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-          
+           
             if (CashierClass.CashierQueue.Count > 0)
             {
                 CashierClass.CashierQueue.Dequeue();
