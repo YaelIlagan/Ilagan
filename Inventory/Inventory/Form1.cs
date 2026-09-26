@@ -50,7 +50,7 @@ namespace Inventory
             }
         }
 
-        public void ResetFields()
+        public void Clearfields()
         {
             txtProductName.Clear();
             cbCategory.SelectedIndex = -1;
@@ -71,14 +71,14 @@ namespace Inventory
         public int Quantity(string qty)
         {
             if (!Regex.IsMatch(qty, @"^[0-9]+$"))
-                throw new NumberFormatException("Quantity should be numbers only.");
+                throw new NumberFormatException("Quantity should have numbers only.");
             return Convert.ToInt32(qty);
         }
 
         public double SellingPrice(string price)
         {
             if (!Regex.IsMatch(price, @"^(\d*\.)?\d+$"))
-                throw new CurrencyFormatException("Sell price should be a valid number.");
+                throw new CurrencyFormatException("Price should be a valid number.");
             return Convert.ToDouble(price);
         }
 
@@ -98,20 +98,19 @@ namespace Inventory
 
                 gridViewProductList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 gridViewProductList.DataSource = showProductList;
-
-                ResetFields();
+                Clearfields();
             }
             catch (StringFormatException ex)
             {
-                MessageBox.Show(ex.Message, "Invalid Product Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error! Invalid Product Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (NumberFormatException ex)
             {
-                MessageBox.Show(ex.Message, "Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error! Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (CurrencyFormatException ex)
             {
-                MessageBox.Show(ex.Message, "Invalid Sell Price", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error! Invalid Price", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
